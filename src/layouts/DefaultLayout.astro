@@ -1,0 +1,26 @@
+---
+import Head from "@components/common/Head.astro";
+import Footer from "@components/common/Footer.astro";
+import Navbar from "@components/Navbar.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+//  http://web-accessibility.carnegiemuseums.org/foundations/semantic/
+//  Follow the W3C's Web Content Accessibility Guidelines (WCAG) to ensure that your site is accessible to all users.
+---
+
+<!doctype html>
+<html lang="en" data-theme="bumblebee">
+  <Head title={title} />
+  <body>
+    <header><nav><Navbar /></nav></header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

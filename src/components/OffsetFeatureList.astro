@@ -1,0 +1,93 @@
+---
+const features = [
+  {
+    title: "Instant Backend Setup",
+    description:
+      "Supabase provides all backend services out-of-the-box, including databases, authentication, and real-time capabilities, significantly reducing setup times.",
+  },
+  {
+    title: "Real-time Interactivity",
+    description:
+      "HTMX allows you to add real-time interactivity to your web pages without writing complex JavaScript, keeping your applications light and fast.",
+  },
+  {
+    title: "Modern Web Architectures",
+    description:
+      "Astro leverages modern web architecture principles to serve static HTML with dynamic components, ensuring fast loading times and optimal performance.",
+  },
+  {
+    title: "Component-Based Design",
+    description:
+      "Utilize Astro's component-based architecture to create reusable, maintainable pieces of your application, enhancing both development speed and code quality.",
+  },
+
+  {
+    title: "Seamless Deployment",
+    description:
+      "Deploy your applications smoothly with Vercel integration, optimizing for performance and speed with global CDN support.",
+  },
+
+  {
+    title: "Dynamic Styling with Tailwind CSS",
+    description:
+      "Style your applications efficiently with Tailwind CSS, which enables rapid UI development with its utility-first approach.",
+  },
+];
+---
+
+<section class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-20 lg:gap-y-8 mx-auto max-w-2xl lg:max-w-none"
+    >
+      <div class="">
+        <h2 class="text-base font-semibold leading-7 text-secondary">
+          Instantly equipped
+        </h2>
+        <p
+          class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+        >
+          Jumpstart your project
+        </p>
+        <p class="mt-6 text-base leading-8 text-gray-600">
+          With the HAXS Stack, you hit the ground running. This stack seamlessly
+          integrates these powerful technologies, ensuring that you have all the
+          necessary tools for robust web development at your fingertips,
+          instantly accelerating your project timeline.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 col-span-2 gap-y-16 gap-x-8">
+        <!-- Card -->
+        {
+          features.map((feature) => (
+            <div class="relative">
+              <div class="pl-10">
+                <p class=" font-semibold tracking-tight text-gray-900 text-base">
+                  {feature.title}
+                  <svg
+                    class="h-6 w-6 text-secondary absolute top-1 left-0"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="m4.5 11.795l4.221 4.221a1.596 1.596 0 0 0 2.272 0L19.5 7.51"
+                    />
+                  </svg>
+                </p>
+                <p class="text-base leading-8 text-gray-600 mt-2">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
