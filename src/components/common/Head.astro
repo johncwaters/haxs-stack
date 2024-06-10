@@ -15,11 +15,8 @@ const { title } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <script
-    src="https://unpkg.com/htmx.org@1.9.11"
-    integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0"
-    crossorigin="anonymous"
-    is:inline></script>
-
+  <script>
+    import "htmx.org";
+  </script>
   <ViewTransitions />
 </head>
