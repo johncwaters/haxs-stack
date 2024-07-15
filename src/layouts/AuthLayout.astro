@@ -3,14 +3,15 @@ import Head from "@components/common/Header.astro";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" data-theme="bumblebee">
-  <Head title={title} />
+  <Head title={title} description={description} />
   <body>
     <slot />
   </body>
