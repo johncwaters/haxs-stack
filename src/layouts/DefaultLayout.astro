@@ -5,9 +5,10 @@ import Navbar from "@components/common/Navbar/Navbar.astro";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 //  http://web-accessibility.carnegiemuseums.org/foundations/semantic/
 //  Follow the W3C's Web Content Accessibility Guidelines (WCAG) to ensure that your site is accessible to all users.
@@ -15,7 +16,7 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en" data-theme="bumblebee">
-  <Head title={title} />
+  <Head title={title} description={description} />
   <body>
     <header><Navbar alwaysVisible /></header>
     <main>
