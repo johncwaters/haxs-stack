@@ -51,7 +51,7 @@ function matchPath(route: string[], path: string[]) {
  * Middleware to check authentication and handle token refresh
  */
 export const onRequest = defineMiddleware(
-	async ({ locals, url, cookies, redirect }, next) => {
+	async ({ locals, url, cookies, redirect }: any, next: () => any) => {
 		const { pathname } = url;
 		const path = splitPath(pathname);
 
