@@ -24,9 +24,12 @@ const { title, description } = Astro.props;
     </main>
     <Footer />
     <script>
+      //@ts-ignore
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
+        //@ts-ignore
+        window.netlifyIdentity.on("init", (user: any) => {
           if (!user) {
+            //@ts-ignore
             window.netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";
             });
