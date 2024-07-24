@@ -20,7 +20,54 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: date }
-      - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
-      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
+      - { name: publishedAt, label: Date, widget: datetime }
+      - { label: "Publish", name: "isPublish", widget: "boolean", default: true }
+      - { label: "Draft", name: "isDraft", widget: "boolean", default: false }
       - { name: body, label: Body, widget: markdown }
+  
+  - name: product
+    label: Products
+    folder: src/content/products
+    create: true
+    format: frontmatter
+    preview_path: product/{{slug}}
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Description, widget: markdown }
+      - { name: media, label: Media, widget: image, allow_multiple: true, media_library: { config: { multiple: true } } }
+      - { name: category, label: Category, widget: string }
+      - { name: price, label: Price, widget: number }
+      - { name: compare_at_price, label: Compare-at Price, widget: number }
+      - { name: charge_tax, label: "Charge tax on this product", widget: boolean, default: true }
+      - { name: cost_per_item, label: "Cost per item", widget: number }
+      - { name: profit, label: Profit, widget: number, required: false }
+      - { name: margin, label: Margin, widget: number, required: false }
+      - { name: track_quantity, label: "Track quantity", widget: boolean, default: true }
+      - { name: quantity, label: Quantity, widget: number }
+      - { name: shop_location, label: "Shop location", widget: string }
+      - { name: shop_location_quantity, label: "Shop location quantity available", widget: number }
+      - { name: continue_selling, label: "Continue selling when out of stock", widget: boolean, default: true }
+      - { name: sku, label: SKU, widget: string, required: false }
+      - { name: barcode, label: Barcode, widget: string, required: false }
+      - { name: physical_product, label: "This is a physical product", widget: boolean, default: true }
+      - { name: weight, label: Weight, widget: number }
+      - { name: weight_unit, label: "Weight unit", widget: select, options: ["lb", "kg", "oz", "g"] }
+      - { name: customs_information, label: "Customs information", widget: string, required: false }
+      - { name: variants, label: Variants, widget: list, fields: [
+          { name: option, label: "Option", widget: string },
+          { name: value, label: "Value", widget: string }
+        ]
+      }
+      - { name: seo_title, label: "SEO Title", widget: string }
+      - { name: seo_description, label: "SEO Description", widget: string }
+      - { name: status, label: Status, widget: select, options: ["Active", "Inactive"], default: "Active" }
+      - { name: sales_channels, label: "Sales Channels", widget: list, fields: [
+          { name: channel, label: "Channel", widget: string },
+          { name: status, label: "Status", widget: string }
+        ]
+      }
+      - { name: product_type, label: "Product type", widget: string }
+      - { name: vendor, label: Vendor, widget: string }
+      - { name: collections, label: Collections, widget: list, field: { name: collection, label: "Collection", widget: string } }
+      - { name: tags, label: Tags, widget: list, field: { name: tag, label: "Tag", widget: string } }
+      - { name: theme_template, label: "Theme template", widget: string, default: "Default product" }
