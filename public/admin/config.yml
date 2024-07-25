@@ -9,6 +9,7 @@ publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
 site_url: "https://haxs-stack.netlify.app" # your site name
+display_url: "https://haxs-stack.netlify.app"
 
 collections:
   - name: post
@@ -36,16 +37,10 @@ collections:
       - { name: description, label: Description, widget: markdown }
       - { name: media, label: Media, widget: image, allow_multiple: true, media_library: { config: { multiple: true } } }
       - { name: category, label: Category, widget: string }
-      - { name: price, label: Price, widget: number }
-      - { name: compare_at_price, label: Compare-at Price, widget: number }
-      - { name: charge_tax, label: "Charge tax on this product", widget: boolean, default: true }
-      - { name: cost_per_item, label: "Cost per item", widget: number }
-      - { name: profit, label: Profit, widget: number, required: false }
-      - { name: margin, label: Margin, widget: number, required: false }
+      - { name: price, label: Price, widget: number, value_type: "float"}
+      - { name: compare_at_price, label: Compare-at Price, widget: number, value_type: "float", required: false }
       - { name: track_quantity, label: "Track quantity", widget: boolean, default: true }
       - { name: quantity, label: Quantity, widget: number }
-      - { name: shop_location, label: "Shop location", widget: string }
-      - { name: shop_location_quantity, label: "Shop location quantity available", widget: number }
       - { name: continue_selling, label: "Continue selling when out of stock", widget: boolean, default: true }
       - { name: sku, label: SKU, widget: string, required: false }
       - { name: barcode, label: Barcode, widget: string, required: false }
@@ -60,12 +55,6 @@ collections:
       }
       - { name: seo_title, label: "SEO Title", widget: string }
       - { name: seo_description, label: "SEO Description", widget: string }
-      - { name: status, label: Status, widget: select, options: ["Active", "Inactive"], default: "Active" }
-      - { name: sales_channels, label: "Sales Channels", widget: list, fields: [
-          { name: channel, label: "Channel", widget: string },
-          { name: status, label: "Status", widget: string }
-        ]
-      }
       - { name: product_type, label: "Product type", widget: string }
       - { name: vendor, label: Vendor, widget: string }
       - { name: collections, label: Collections, widget: list, field: { name: collection, label: "Collection", widget: string } }
