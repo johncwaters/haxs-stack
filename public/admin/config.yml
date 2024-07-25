@@ -31,7 +31,7 @@ collections:
     folder: src/content/products
     create: true
     format: frontmatter
-    preview_path: product/{{slug}}
+    preview_path: store/{{slug}}
     fields:
       - { name: title, label: Title, widget: string }
       - { name: description, label: Description, widget: markdown }
@@ -47,7 +47,6 @@ collections:
       - { name: physical_product, label: "This is a physical product", widget: boolean, default: true }
       - { name: weight, label: Weight, widget: number }
       - { name: weight_unit, label: "Weight unit", widget: select, options: ["lb", "kg", "oz", "g"] }
-      - { name: customs_information, label: "Customs information", widget: string, required: false }
       - { name: variants, label: Variants, widget: list, fields: [
           { name: option, label: "Option", widget: string },
           { name: value, label: "Value", widget: string }

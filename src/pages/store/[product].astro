@@ -1,0 +1,20 @@
+---
+export const prerender = false;
+
+import ProductLayout from "@layouts/ProductLayout.astro";
+import { getCollection } from "astro:content";
+
+const products = await getCollection("products", ({ data }) => {
+  //   return data.draft === true;
+});
+
+// Example URL path https://www.rockler.com/hand-tools/chisels/bevel-edge-chisels?page=4
+---
+
+<ProductLayout title="HAXS Store" description="BUY NOW">
+  <section class="bg-gradient-to-br from-amber-100 to-orange-300">
+    <div class="hero-content text-center py-32 sm:py-48 lg:py-56">
+      {products[0].slug}
+    </div>
+  </section>
+</ProductLayout>
