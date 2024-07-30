@@ -43,22 +43,16 @@ Your HAXS Stack project will have the following structure:
 └── package.json
 ```
 
-- `src/pages/`: Contains Astro or Markdown files, each representing a route.
-- `src/components/`: Ideal for Astro/React components.
-- `public/`: Hosts static assets like images.
-
 ## 🧞 Commands
 
 Execute these commands from the project's root in your terminal:
 
-| Command                   | Action                                      |
-| ------------------------- | ------------------------------------------- |
-| `npm install`             | Install dependencies                        |
-| `npm run dev`             | Start local dev server at `localhost:4321`  |
-| `npm run build`           | Build site for production in `./dist/`      |
-| `npm run preview`         | Preview the build locally before deployment |
-| `npm run astro ...`       | Execute Astro CLI commands                  |
-| `npm run astro -- --help` | Get help with the Astro CLI                 |
+| Command        | Action                                      |
+| -------------- | ------------------------------------------- |
+| `pnpm install` | Install dependencies                        |
+| `pnpm dev`     | Start local dev server at `localhost:4321`  |
+| `pnpm build`   | Build site for production in `./dist/`      |
+| `pnpm preview` | Preview the build locally before deployment |
 
 ## Extending Your Stack
 
@@ -66,10 +60,10 @@ The HAXS Stack is designed for flexibility. Integrate with Tailwind CSS, Supabas
 
 ### Adding New Technologies
 
-1. Install additional packages (e.g., `npm install tailwindcss`).
+1. Install additional packages (e.g., `pnpm install tailwindcss`).
 2. Update your project configuration to integrate new technologies.
 3. Ensure all new dependencies are well documented and included in the project setup instructions.
 
 ## Get Started
 
-Clone this repository and run `npm install` to set up your environment. Follow the structured commands to develop, build, and preview your project.
+Clone this repository and run `pnpm install` to set up your environment. Follow the structured commands to develop, build, and preview your project.
