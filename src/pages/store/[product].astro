@@ -4,8 +4,11 @@ export const prerender = false;
 import ProductLayout from "@layouts/ProductLayout.astro";
 import { getCollection } from "astro:content";
 
-const products = await getCollection("products", ({ data }) => {
-  //   return data.draft === true;
+const { product } = Astro.params;
+
+const products = await getCollection("products", ({ slug }) => {
+  // Get the product with the correct slug
+  return slug === product;
 });
 
 // Example URL path https://www.rockler.com/hand-tools/chisels/bevel-edge-chisels?page=4
@@ -16,5 +19,10 @@ const products = await getCollection("products", ({ data }) => {
     <div class="hero-content text-center py-32 sm:py-48 lg:py-56">
       {products[0].slug}
     </div>
+    <img
+      class="w-full h-auto"
+      src={products[0].data.media}
+      alt={products[0].data.title}
+    />
   </section>
 </ProductLayout>
